@@ -21,7 +21,7 @@ export const eventosFiltradosState = selector({
 export const eventosAsync =selector({
   key:"eventosAsync",
   get: async () => {
-    const respostaHttp = await fetch('http://localhost:8080/eventos')
+    const respostaHttp = await fetch('https://json-server-events.onrender.com/eventos')
     const eventosJson:IEvento[] = await respostaHttp.json();
     return eventosJson.map(evento => ({
       ...evento,
